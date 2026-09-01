@@ -7,7 +7,9 @@ manuals. The repository follows the common multi-skill layout:
 skills/
 ├── intel-system-programming-vol3c/
 │   └── SKILL.md
-└── linking-loading-and-libraries/
+├── linking-loading-and-libraries/
+│   └── SKILL.md
+└── linux-virtualization-principles-implementation/
     └── SKILL.md
 ```
 
@@ -17,6 +19,7 @@ skills/
 |---|---|
 | `linking-loading-and-libraries` | Compilation, ELF/PE/COFF, symbols, relocation, loading, dynamic linking, ABI, CRT, memory, and system calls |
 | `intel-system-programming-vol3c` | Intel VMX/VMCS, VM entry and exit, EPT/VPID, APIC virtualization, SMM, and Intel Processor Trace |
+| `linux-virtualization-principles-implementation` | KVM/x86 virtualization, VMX and VM exits, Guest memory translation, interrupt and PCI virtualization, Virtio/Virtqueue, and Overlay/OVS packet paths |
 
 Each skill contains a concise `SKILL.md`, chapter references loaded on demand,
 a glossary, reusable patterns, and a decision-oriented cheatsheet.
@@ -44,6 +47,12 @@ npx skills add git@github.com:CUMT-syssec/sec-book-skills.git \
   --global --agent codex --yes
 ```
 
+```bash
+npx skills add git@github.com:CUMT-syssec/sec-book-skills.git \
+  --skill linux-virtualization-principles-implementation \
+  --global --agent codex --yes
+```
+
 Install every skill in the repository:
 
 ```bash
@@ -62,11 +71,12 @@ From the repository root:
 npx skills add . --list
 ```
 
-The expected result is exactly these two skill names:
+The expected result is exactly these three skill names:
 
 ```text
 intel-system-programming-vol3c
 linking-loading-and-libraries
+linux-virtualization-principles-implementation
 ```
 
 ## Content and distribution boundary
