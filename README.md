@@ -5,6 +5,8 @@ manuals. The repository follows the common multi-skill layout:
 
 ```text
 skills/
+├── computer-systems-a-programmers-perspective/
+│   └── SKILL.md
 ├── intel-system-programming-vol3c/
 │   └── SKILL.md
 ├── linking-loading-and-libraries/
@@ -19,8 +21,9 @@ skills/
 
 | Skill | Scope |
 |---|---|
-| `linking-loading-and-libraries` | Compilation, ELF/PE/COFF, symbols, relocation, loading, dynamic linking, ABI, CRT, memory, and system calls |
+| `computer-systems-a-programmers-perspective` | Data representation, x86-64 machine code, processor architecture, optimization, memory hierarchy, linking, processes, virtual memory, system I/O, networking, and concurrency |
 | `intel-system-programming-vol3c` | Intel VMX/VMCS, VM entry and exit, EPT/VPID, APIC virtualization, SMM, and Intel Processor Trace |
+| `linking-loading-and-libraries` | Compilation, ELF/PE/COFF, symbols, relocation, loading, dynamic linking, ABI, CRT, memory, and system calls |
 | `linux-virtualization-principles-implementation` | KVM/x86 virtualization, VMX and VM exits, Guest memory translation, interrupt and PCI virtualization, Virtio/Virtqueue, and Overlay/OVS packet paths |
 | `processor-virtualization-technology` | Intel VMX operation, VMCS configuration, VM entry and exit, EPT/VPID cache domains, exception reflection, and Local APIC virtualization |
 
@@ -37,6 +40,12 @@ npx skills add git@github.com:CUMT-syssec/sec-book-skills.git --list
 ```
 
 Install one skill globally for Codex:
+
+```bash
+npx skills add git@github.com:CUMT-syssec/sec-book-skills.git \
+  --skill computer-systems-a-programmers-perspective \
+  --global --agent codex --yes
+```
 
 ```bash
 npx skills add git@github.com:CUMT-syssec/sec-book-skills.git \
@@ -80,9 +89,10 @@ From the repository root:
 npx skills add . --list
 ```
 
-The expected result is exactly these four skill names:
+The expected result is exactly these five skill names:
 
 ```text
+computer-systems-a-programmers-perspective
 intel-system-programming-vol3c
 linking-loading-and-libraries
 linux-virtualization-principles-implementation
