@@ -1,7 +1,8 @@
 # sec-book-skills
 
-Private collection of Agent Skills distilled from systems-security books and
-manuals. The repository follows the common multi-skill layout:
+Private collection of Agent Skills distilled from systems-security books,
+manuals, and source trees. The repository follows the common multi-skill
+layout:
 
 ```text
 skills/
@@ -10,6 +11,8 @@ skills/
 ├── intel-system-programming-vol3c/
 │   └── SKILL.md
 ├── linking-loading-and-libraries/
+│   └── SKILL.md
+├── linux-kernel-5-10-engineering/
 │   └── SKILL.md
 ├── linux-virtualization-principles-implementation/
 │   └── SKILL.md
@@ -24,6 +27,7 @@ skills/
 | `computer-systems-a-programmers-perspective` | Data representation, x86-64 machine code, processor architecture, optimization, memory hierarchy, linking, processes, virtual memory, system I/O, networking, and concurrency |
 | `intel-system-programming-vol3c` | Intel VMX/VMCS, VM entry and exit, EPT/VPID, APIC virtualization, SMM, and Intel Processor Trace |
 | `linking-loading-and-libraries` | Compilation, ELF/PE/COFF, symbols, relocation, loading, dynamic linking, ABI, CRT, memory, and system calls |
+| `linux-kernel-5-10-engineering` | Linux 5.10.240 source navigation, Kbuild/Kconfig, execution contexts, locking/RCU, core subsystems, driver lifecycle, UAPI, security, tracing, and verification |
 | `linux-virtualization-principles-implementation` | KVM/x86 virtualization, VMX and VM exits, Guest memory translation, interrupt and PCI virtualization, Virtio/Virtqueue, and Overlay/OVS packet paths |
 | `processor-virtualization-technology` | Intel VMX operation, VMCS configuration, VM entry and exit, EPT/VPID cache domains, exception reflection, and Local APIC virtualization |
 
@@ -61,6 +65,12 @@ npx skills add git@github.com:CUMT-syssec/sec-book-skills.git \
 
 ```bash
 npx skills add git@github.com:CUMT-syssec/sec-book-skills.git \
+  --skill linux-kernel-5-10-engineering \
+  --global --agent codex --yes
+```
+
+```bash
+npx skills add git@github.com:CUMT-syssec/sec-book-skills.git \
   --skill linux-virtualization-principles-implementation \
   --global --agent codex --yes
 ```
@@ -89,12 +99,13 @@ From the repository root:
 npx skills add . --list
 ```
 
-The expected result is exactly these five skill names:
+The expected result is exactly these six skill names:
 
 ```text
 computer-systems-a-programmers-perspective
 intel-system-programming-vol3c
 linking-loading-and-libraries
+linux-kernel-5-10-engineering
 linux-virtualization-principles-implementation
 processor-virtualization-technology
 ```
@@ -105,6 +116,10 @@ These skills are synthesized learning notes and operational decision aids. The
 source PDFs/manuals are not included. The underlying publications are
 third-party copyrighted works, so this repository must remain private unless
 the relevant public redistribution rights are established separately.
+
+The `linux-kernel-5-10-engineering` skill is synthesized from the
+GPL-2.0-licensed Linux 5.10.240 source tree. It includes source-navigation
+anchors and short illustrative snippets, not a copy of the kernel source.
 
 Generated guidance can contain OCR or interpretation errors. Verify exact
 commands, bit fields, structure offsets, ABI details, and hardware behavior
